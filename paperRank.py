@@ -93,7 +93,7 @@ def get_top_papers(papers):
     return topPapers
 
 
-def getTops(papers, podiums = 5):
+def getTops(papers, podiums):
     if len(papers) <= podiums:
         return podiums
     tops = []
@@ -103,7 +103,7 @@ def getTops(papers, podiums = 5):
             if p[1] > maxRating:
                 maxRating = p[1]
         for p in range(0, len(papers)):
-            if papers[p][1] == maxRating:
+            if papers[p][1] == maxRating and maxRating >= 7:
                 tops.append(papers[p])
                 papers.pop(p)
                 break
