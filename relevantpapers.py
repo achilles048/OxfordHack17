@@ -21,8 +21,7 @@ def updatepapers(disease):
     original_papers = database.findDisease(disease)
     current_papers = findrelevantpapers(disease)
     for paper in current_papers:
-        if not database.findPaper(disease,paper):
+        if not (paper in original_papers):
             database.addPaper(disease,paper)
-
 
 
