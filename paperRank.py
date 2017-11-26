@@ -93,7 +93,7 @@ def get_top_papers(papers):
     return topPapers
 
 
-def getTops(papers, podiums):
+def getTops(papers, podiums = 5):
     if len(papers) <= podiums:
         return podiums
     tops = []
