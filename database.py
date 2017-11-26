@@ -1,4 +1,5 @@
 import json
+import paperRank
 
 data = {}
 
@@ -41,8 +42,9 @@ def addPaper(disease, p):
     data[disease].append([p, 5, 0])
 
 
-def updatePaper (disease, paper, updatedPaper):
+def updatePaper(disease, paper, rank):
     index = data[disease].index(paper)
+    updatedPaper = paperRank.update_rating(paper, rank)
     data[disease][index] = updatedPaper
 
 '''
